@@ -1,0 +1,243 @@
+name: dockercompose222141395526168607
+services:
+  basket.api:
+    build:
+      context: E:\courses\Asp .Net\.Net Microservice\Project\aspnet.microsevices
+      dockerfile: Services/Basket/Basket.Api/Dockerfile
+      args:
+        BUILD_CONFIGURATION: Debug
+      labels:
+        com.microsoft.created-by: visual-studio
+        com.microsoft.visual-studio.project-name: Basket.Api
+      target: base
+    container_name: basket.api
+    depends_on:
+      basketdb:
+        condition: service_started
+        required: true
+    entrypoint:
+    - tail
+    - -f
+    - /dev/null
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_LOGGING__CONSOLE__DISABLECOLORS: "true"
+      CacheSettings:ConnectionString: basketdb:6379
+      DOTNET_USE_POLLING_FILE_WATCHER: "1"
+      NUGET_FALLBACK_PACKAGES: ""
+    image: basketapi:dev
+    labels:
+      com.microsoft.visualstudio.debuggee.arguments: ' --additionalProbingPath /.nuget/packages  "/app/bin/Debug/net8.0/Basket.Api.dll"'
+      com.microsoft.visualstudio.debuggee.killprogram: /bin/sh -c "if PID=$$(pidof
+        dotnet); then kill $$PID; fi"
+      com.microsoft.visualstudio.debuggee.program: dotnet
+      com.microsoft.visualstudio.debuggee.workingdirectory: /app
+    networks:
+      default: null
+    ports:
+    - mode: ingress
+      target: 80
+      published: "8001"
+      protocol: tcp
+    tty: true
+    volumes:
+    - type: bind
+      source: E:\courses\Asp .Net\.Net Microservice\Project\aspnet.microsevices\Services\Basket\Basket.Api
+      target: /app
+      bind:
+        create_host_path: true
+    - type: bind
+      source: E:\courses\Asp .Net\.Net Microservice\Project\aspnet.microsevices
+      target: /src
+      bind:
+        create_host_path: true
+    - type: bind
+      source: C:\Users\ASUS\vsdbg\vs2017u5
+      target: /remote_debugger
+      bind:
+        create_host_path: true
+    - type: bind
+      source: C:\Users\ASUS\.nuget\packages\
+      target: /.nuget/packages
+      read_only: true
+      bind:
+        create_host_path: true
+    - type: bind
+      source: C:\Users\ASUS\AppData\Roaming/ASP.NET/Https
+      target: /root/.aspnet/https
+      read_only: true
+      bind:
+        create_host_path: true
+    - type: bind
+      source: C:\Users\ASUS\AppData\Roaming/ASP.NET/Https
+      target: /home/app/.aspnet/https
+      read_only: true
+      bind:
+        create_host_path: true
+    - type: bind
+      source: C:\Users\ASUS\AppData\Roaming/Microsoft/UserSecrets
+      target: /root/.microsoft/usersecrets
+      read_only: true
+      bind:
+        create_host_path: true
+    - type: bind
+      source: C:\Users\ASUS\AppData\Roaming/Microsoft/UserSecrets
+      target: /home/app/.microsoft/usersecrets
+      read_only: true
+      bind:
+        create_host_path: true
+    - type: bind
+      source: C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Sdks\Microsoft.Docker.Sdk\tools\TokenService.Proxy\linux-x64\net6.0
+      target: /TokenService.Proxy
+      read_only: true
+      bind:
+        create_host_path: true
+    - type: bind
+      source: C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Sdks\Microsoft.Docker.Sdk\tools\HotReloadProxy\linux-x64\net8.0
+      target: /HotReloadProxy
+      read_only: true
+      bind:
+        create_host_path: true
+    - type: bind
+      source: C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\HotReload
+      target: /HotReloadAgent
+      read_only: true
+      bind:
+        create_host_path: true
+  basketdb:
+    container_name: basketdb
+    image: redis:alpine
+    networks:
+      default: null
+    ports:
+    - mode: ingress
+      target: 6379
+      published: "6379"
+      protocol: tcp
+    restart: always
+  catalog.api:
+    build:
+      context: E:\courses\Asp .Net\.Net Microservice\Project\aspnet.microsevices
+      dockerfile: Services/Catalog/Catalog.Api/Dockerfile
+      args:
+        BUILD_CONFIGURATION: Debug
+      labels:
+        com.microsoft.created-by: visual-studio
+        com.microsoft.visual-studio.project-name: Catalog.Api
+      target: base
+    container_name: catalog.api
+    depends_on:
+      catalogdb:
+        condition: service_started
+        required: true
+    entrypoint:
+    - tail
+    - -f
+    - /dev/null
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_LOGGING__CONSOLE__DISABLECOLORS: "true"
+      DOTNET_USE_POLLING_FILE_WATCHER: "1"
+      DatabaseSettings:ConnectionString: mongodb://catalogdb:27017
+      NUGET_FALLBACK_PACKAGES: ""
+    image: catalogapi:dev
+    labels:
+      com.microsoft.visualstudio.debuggee.arguments: ' --additionalProbingPath /.nuget/packages  "/app/bin/Debug/net8.0/Catalog.Api.dll"'
+      com.microsoft.visualstudio.debuggee.killprogram: /bin/sh -c "if PID=$$(pidof
+        dotnet); then kill $$PID; fi"
+      com.microsoft.visualstudio.debuggee.program: dotnet
+      com.microsoft.visualstudio.debuggee.workingdirectory: /app
+    networks:
+      default: null
+    ports:
+    - mode: ingress
+      target: 80
+      published: "8000"
+      protocol: tcp
+    tty: true
+    volumes:
+    - type: bind
+      source: E:\courses\Asp .Net\.Net Microservice\Project\aspnet.microsevices\Services\Catalog\Catalog.Api
+      target: /app
+      bind:
+        create_host_path: true
+    - type: bind
+      source: E:\courses\Asp .Net\.Net Microservice\Project\aspnet.microsevices
+      target: /src
+      bind:
+        create_host_path: true
+    - type: bind
+      source: C:\Users\ASUS\vsdbg\vs2017u5
+      target: /remote_debugger
+      bind:
+        create_host_path: true
+    - type: bind
+      source: C:\Users\ASUS\.nuget\packages\
+      target: /.nuget/packages
+      read_only: true
+      bind:
+        create_host_path: true
+    - type: bind
+      source: C:\Users\ASUS\AppData\Roaming/ASP.NET/Https
+      target: /root/.aspnet/https
+      read_only: true
+      bind:
+        create_host_path: true
+    - type: bind
+      source: C:\Users\ASUS\AppData\Roaming/ASP.NET/Https
+      target: /home/app/.aspnet/https
+      read_only: true
+      bind:
+        create_host_path: true
+    - type: bind
+      source: C:\Users\ASUS\AppData\Roaming/Microsoft/UserSecrets
+      target: /root/.microsoft/usersecrets
+      read_only: true
+      bind:
+        create_host_path: true
+    - type: bind
+      source: C:\Users\ASUS\AppData\Roaming/Microsoft/UserSecrets
+      target: /home/app/.microsoft/usersecrets
+      read_only: true
+      bind:
+        create_host_path: true
+    - type: bind
+      source: C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Sdks\Microsoft.Docker.Sdk\tools\TokenService.Proxy\linux-x64\net6.0
+      target: /TokenService.Proxy
+      read_only: true
+      bind:
+        create_host_path: true
+    - type: bind
+      source: C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Sdks\Microsoft.Docker.Sdk\tools\HotReloadProxy\linux-x64\net8.0
+      target: /HotReloadProxy
+      read_only: true
+      bind:
+        create_host_path: true
+    - type: bind
+      source: C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\HotReload
+      target: /HotReloadAgent
+      read_only: true
+      bind:
+        create_host_path: true
+  catalogdb:
+    container_name: catalogdb
+    image: mongo
+    networks:
+      default: null
+    ports:
+    - mode: ingress
+      target: 27017
+      published: "27017"
+      protocol: tcp
+    restart: always
+    volumes:
+    - type: volume
+      source: mongo_data
+      target: /data/db
+      volume: {}
+networks:
+  default:
+    name: dockercompose222141395526168607_default
+volumes:
+  mongo_data:
+    name: dockercompose222141395526168607_mongo_data

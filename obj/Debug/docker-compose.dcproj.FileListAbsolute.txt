@@ -22,3 +22,15 @@ E:\courses\Asp .Net\.Net Microservice\Project\aspnet.microsevices\bin\Debug\Cata
 E:\courses\Asp .Net\.Net Microservice\Project\aspnet.microsevices\obj\Debug\docker-compose.dcproj.AssemblyReference.cache
 E:\courses\Asp .Net\.Net Microservice\Project\aspnet.microsevices\obj\Debug\docker-compose.dcproj.CoreCompileInputs.cache
 E:\courses\Asp .Net\.Net Microservice\Project\aspnet.microsevices\obj\Debug\docker-c.35A3FFBA.Up2Date
+E:\courses\Asp .Net\.Net Microservice\Project\aspnet.microsevices\bin\Debug\Basket.Api.deps.json
+E:\courses\Asp .Net\.Net Microservice\Project\aspnet.microsevices\bin\Debug\Basket.Api.runtimeconfig.json
+E:\courses\Asp .Net\.Net Microservice\Project\aspnet.microsevices\bin\Debug\Basket.Api.exe
+E:\courses\Asp .Net\.Net Microservice\Project\aspnet.microsevices\bin\Debug\Basket.Api.dll
+E:\courses\Asp .Net\.Net Microservice\Project\aspnet.microsevices\bin\Debug\Microsoft.Extensions.Caching.StackExchangeRedis.dll
+E:\courses\Asp .Net\.Net Microservice\Project\aspnet.microsevices\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+E:\courses\Asp .Net\.Net Microservice\Project\aspnet.microsevices\bin\Debug\Newtonsoft.Json.dll
+E:\courses\Asp .Net\.Net Microservice\Project\aspnet.microsevices\bin\Debug\StackExchange.Redis.dll
+E:\courses\Asp .Net\.Net Microservice\Project\aspnet.microsevices\bin\Debug\Microsoft.Extensions.Logging.Abstractions.dll
+E:\courses\Asp .Net\.Net Microservice\Project\aspnet.microsevices\bin\Debug\Microsoft.Extensions.Options.dll
+E:\courses\Asp .Net\.Net Microservice\Project\aspnet.microsevices\bin\Debug\Pipelines.Sockets.Unofficial.dll
+E:\courses\Asp .Net\.Net Microservice\Project\aspnet.microsevices\bin\Debug\Basket.Api.pdb
