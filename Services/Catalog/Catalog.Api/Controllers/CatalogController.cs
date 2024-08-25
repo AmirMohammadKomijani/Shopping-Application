@@ -39,12 +39,22 @@ namespace Catalog.Api.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult<Product>> GetProduct([FromBody] Product product)
+        public async Task<ActionResult<Product>> CreateProduct([FromBody] Product product)
         {
             await _productRepository.CreateProduct(product);
             return CreatedAtRoute("GetProduct", new { id = product.Id }, product);
         }
 
+        [HttpPut]
+        public async Task<ActionResult<Product>> UpdateProduct([FromBody] Product product)
+        {
+            return Ok(await _productRepository.UpdateProduct(product));
+        }
 
+        [HttpDelete]
+        public async Task<ActionResult<Product>> DeleteProduct(string id)
+        {
+            return Ok(await _productRepository.DeleteProduct(id));
+        }
     }
 }
