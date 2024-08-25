@@ -20,15 +20,31 @@ namespace Catalog.Api.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Product>>> GetProducts()
         {
-            var products = _productRepository.GetProducts();
+            var products = await _productRepository.GetProducts();
             return Ok(products);
         }
 
         [HttpGet("{id:int}")]
         public async Task<ActionResult<Product>> GetProduct(string id)
         {
-            var products = _productRepository.GetProduct(id);
+            var products = await _productRepository.GetProduct(id);
             return Ok(products);
         }
+
+        [HttpGet("[action]/{category}")]
+        public async Task<ActionResult<IEnumerable<Product>>> GetProductsByCategory(string category)
+        {
+            var products = await _productRepository.GetProductsByCategory(category);
+            return Ok(products);
+        }
+
+        [HttpPost]
+        public async Task<ActionResult<Product>> GetProduct([FromBody] Product product)
+        {
+            await _productRepository.CreateProduct(product);
+            return CreatedAtRoute("GetProduct", new { id = product.Id }, product);
+        }
+
+
     }
 }
