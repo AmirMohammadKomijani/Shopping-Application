@@ -1,6 +1,17 @@
 
+using Basket.Api.Repositories;
+using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
-
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Logging;
+using Microsoft.OpenApi.Models;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 namespace Basket.Api
 {
     public class Program
@@ -10,14 +21,14 @@ namespace Basket.Api
             var builder = WebApplication.CreateBuilder(args);
 
             // Add services to the container.
-            public void ConfigureServices(IServiceCollection services)
-            {
-                services.AddStackExchangeRedisCache(options =>
+            //public IConfiguration Configuration { get; }
+
+                builder.Services.AddStackExchangeRedisCache(options =>
                 {
-                    options.Configuration = Configuration.GetValue<string>("CacheSettings:ConnectionString");
+                    options.Configuration = builder.Configuration.GetValue<string>("CacheSettings:ConnectionString");
                 });
 
-                services.AddScoped<IBasketRepository, BasketRepository>();
+                builder.Services.AddScoped<IBasketRepository, BasketRepository>();
                 builder.Services.AddControllers();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
