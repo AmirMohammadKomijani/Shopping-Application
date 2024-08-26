@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "Sqv0oZKF6RvbgcUi0gKntGVwkPRCQ459Kvvi+CXumGtyfGnG26S3YsEmfI4qTDc8z6ZXgzzN2+QLCnYlBAmFVA==",
+  "dgSpecHash": "EqcdXXxWUVIP5uZONKX5J4WM2HctKZlL7LWBWdidlsLMhPWx7FbUYSOcaDk2t2LsrtpzQp7jb50faRqwj8dLtA==",
   "success": true,
   "projectFilePath": "E:\\courses\\Asp .Net\\.Net Microservice\\Project\\aspnet.microsevices\\Services\\Discount\\Discount.Api\\Discount.Api.csproj",
   "expectedPackageFiles": [
@@ -9,6 +9,7 @@
     "C:\\Users\\ASUS\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\8.0.0\\microsoft.extensions.dependencyinjection.abstractions.8.0.0.nupkg.sha512",
     "C:\\Users\\ASUS\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\8.0.0\\microsoft.extensions.logging.abstractions.8.0.0.nupkg.sha512",
     "C:\\Users\\ASUS\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
+    "C:\\Users\\ASUS\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.19.6\\microsoft.visualstudio.azure.containers.tools.targets.1.19.6.nupkg.sha512",
     "C:\\Users\\ASUS\\.nuget\\packages\\npgsql\\8.0.3\\npgsql.8.0.3.nupkg.sha512",
     "C:\\Users\\ASUS\\.nuget\\packages\\swashbuckle.aspnetcore\\6.4.0\\swashbuckle.aspnetcore.6.4.0.nupkg.sha512",
     "C:\\Users\\ASUS\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.4.0\\swashbuckle.aspnetcore.swagger.6.4.0.nupkg.sha512",
