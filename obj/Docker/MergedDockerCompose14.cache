@@ -1,0 +1,166 @@
+name: dockercompose222141395526168607
+services:
+  basket.api:
+    build:
+      context: E:\courses\Asp .Net\.Net Microservice\Project\aspnet.microsevices
+      dockerfile: Services/Basket/Basket.Api/Dockerfile
+    container_name: basket.api
+    depends_on:
+      basketdb:
+        condition: service_started
+        required: true
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      CacheSettings:ConnectionString: basketdb:6379
+    image: basketapi
+    networks:
+      default: null
+    ports:
+    - mode: ingress
+      target: 80
+      published: "8001"
+      protocol: tcp
+  basketdb:
+    container_name: basketdb
+    image: redis:alpine
+    networks:
+      default: null
+    ports:
+    - mode: ingress
+      target: 6379
+      published: "6379"
+      protocol: tcp
+    restart: always
+  catalog.api:
+    build:
+      context: E:\courses\Asp .Net\.Net Microservice\Project\aspnet.microsevices
+      dockerfile: Services/Catalog/Catalog.Api/Dockerfile
+    container_name: catalog.api
+    depends_on:
+      catalogdb:
+        condition: service_started
+        required: true
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      DatabaseSettings:ConnectionString: mongodb://catalogdb:27017
+    image: catalogapi
+    networks:
+      default: null
+    ports:
+    - mode: ingress
+      target: 80
+      published: "8000"
+      protocol: tcp
+  catalogdb:
+    container_name: catalogdb
+    image: mongo
+    networks:
+      default: null
+    ports:
+    - mode: ingress
+      target: 27017
+      published: "27017"
+      protocol: tcp
+    restart: always
+    volumes:
+    - type: volume
+      source: mongo_data
+      target: /data/db
+      volume: {}
+  discount.api:
+    build:
+      context: E:\courses\Asp .Net\.Net Microservice\Project\aspnet.microsevices
+      dockerfile: Services/Discount/Discount.Api/Dockerfile
+    container_name: discount.api
+    depends_on:
+      discountdb:
+        condition: service_started
+        required: true
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      DatabaseSettings:ConnectionString: Server=discountdb;Port=5432;Database=DiscountDb;User
+        Id=admin;Password=admin1234
+    image: discountapi
+    networks:
+      default: null
+    ports:
+    - mode: ingress
+      target: 80
+      published: "8002"
+      protocol: tcp
+  discountdb:
+    container_name: discountdb
+    environment:
+      POSTGRES_DB: DiscountDb
+      POSTGRES_PASSWORD: admin1234
+      POSTGRES_USER: admin
+    image: postgres
+    networks:
+      default: null
+    ports:
+    - mode: ingress
+      target: 5432
+      published: "5432"
+      protocol: tcp
+    restart: always
+    volumes:
+    - type: volume
+      source: postgres_data
+      target: /var/lib/postgresql/data
+      volume: {}
+  pgadmin:
+    container_name: pgadmin
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@aspnetrun.com
+      PGADMIN_DEFAULT_PASSWORD: admin1234
+    image: dpage/pgadmin4
+    networks:
+      default: null
+    ports:
+    - mode: ingress
+      target: 80
+      published: "5050"
+      protocol: tcp
+    restart: always
+    volumes:
+    - type: volume
+      source: pgadmin_data
+      target: /root/.pgadmin
+      volume: {}
+  portainer:
+    container_name: portainer
+    image: portainer/portainer-ce
+    networks:
+      default: null
+    ports:
+    - mode: ingress
+      target: 8000
+      published: "8080"
+      protocol: tcp
+    - mode: ingress
+      target: 9000
+      published: "9000"
+      protocol: tcp
+    restart: always
+    volumes:
+    - type: bind
+      source: /var/run/docker.sock
+      target: /var/run/docker.sock
+      bind:
+        create_host_path: true
+    - type: volume
+      source: portainer_data
+      target: /data
+      volume: {}
+networks:
+  default:
+    name: dockercompose222141395526168607_default
+volumes:
+  mongo_data:
+    name: dockercompose222141395526168607_mongo_data
+  pgadmin_data:
+    name: dockercompose222141395526168607_pgadmin_data
+  portainer_data:
+    name: dockercompose222141395526168607_portainer_data
+  postgres_data:
+    name: dockercompose222141395526168607_postgres_data

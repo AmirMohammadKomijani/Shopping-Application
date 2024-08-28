@@ -1,10 +1,19 @@
-
+using Discount.Api.Extensions;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Logging;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 namespace Discount.Api
 {
     public class Program
     {
         public static void Main(string[] args)
         {
+
             var builder = WebApplication.CreateBuilder(args);
 
             // Add services to the container.
@@ -15,7 +24,7 @@ namespace Discount.Api
             builder.Services.AddSwaggerGen();
 
             var app = builder.Build();
-
+            app.MigrateDatabase<Program>();
             // Configure the HTTP request pipeline.
             if (app.Environment.IsDevelopment())
             {
