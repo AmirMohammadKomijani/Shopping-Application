@@ -1,0 +1,7 @@
+E:\courses\Asp .Net\.Net Microservice\Project\aspnet.microsevices\Services\Discount\Discount.Grpc\obj\Debug\net5.0\Discount.Grpc.csproj.AssemblyReference.cache
+E:\courses\Asp .Net\.Net Microservice\Project\aspnet.microsevices\Services\Discount\Discount.Grpc\obj\Debug\net5.0\Discount.Grpc.GeneratedMSBuildEditorConfig.editorconfig
+E:\courses\Asp .Net\.Net Microservice\Project\aspnet.microsevices\Services\Discount\Discount.Grpc\obj\Debug\net5.0\Discount.Grpc.AssemblyInfoInputs.cache
+E:\courses\Asp .Net\.Net Microservice\Project\aspnet.microsevices\Services\Discount\Discount.Grpc\obj\Debug\net5.0\Discount.Grpc.AssemblyInfo.cs
+E:\courses\Asp .Net\.Net Microservice\Project\aspnet.microsevices\Services\Discount\Discount.Grpc\obj\Debug\net5.0\Discount.Grpc.csproj.CoreCompileInputs.cache
+E:\courses\Asp .Net\.Net Microservice\Project\aspnet.microsevices\Services\Discount\Discount.Grpc\obj\Debug\net5.0\Discount.Grpc.MvcApplicationPartsAssemblyInfo.cache
+E:\courses\Asp .Net\.Net Microservice\Project\aspnet.microsevices\Services\Discount\Discount.Grpc\obj\Debug\net5.0\Discount.Grpc.sourcelink.json
