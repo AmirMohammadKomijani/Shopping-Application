@@ -21,6 +21,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Discount.Api", "Services\Di
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Discount.Grpc", "Services\Discount\Discount.Grpc\Discount.Grpc.csproj", "{2EE56472-E343-4415-B7D6-C760AE04A06D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GrpcService1", "Services\Discount\GrpcService1\GrpcService1.csproj", "{0146641C-7C0B-4FDA-A7B1-0FF61EA2FC6F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -47,6 +49,10 @@ Global
 		{2EE56472-E343-4415-B7D6-C760AE04A06D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2EE56472-E343-4415-B7D6-C760AE04A06D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2EE56472-E343-4415-B7D6-C760AE04A06D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0146641C-7C0B-4FDA-A7B1-0FF61EA2FC6F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0146641C-7C0B-4FDA-A7B1-0FF61EA2FC6F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0146641C-7C0B-4FDA-A7B1-0FF61EA2FC6F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0146641C-7C0B-4FDA-A7B1-0FF61EA2FC6F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -59,6 +65,7 @@ Global
 		{0DC43FC4-08D0-449B-BC20-E0783A4B5972} = {352295E8-104A-4D7E-AE94-1135E14E33F9}
 		{7D2B39D4-56E2-4BB6-BDE8-D56C46E21572} = {0DC43FC4-08D0-449B-BC20-E0783A4B5972}
 		{2EE56472-E343-4415-B7D6-C760AE04A06D} = {0DC43FC4-08D0-449B-BC20-E0783A4B5972}
+		{0146641C-7C0B-4FDA-A7B1-0FF61EA2FC6F} = {0DC43FC4-08D0-449B-BC20-E0783A4B5972}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B4D44915-5C2A-4D70-95AB-768F4F35180F}
