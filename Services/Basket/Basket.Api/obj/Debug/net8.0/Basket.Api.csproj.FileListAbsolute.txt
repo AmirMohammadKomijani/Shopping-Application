@@ -38,3 +38,10 @@ E:\courses\Asp .Net\.Net Microservice\Project\aspnet.microsevices\Services\Baske
 E:\courses\Asp .Net\.Net Microservice\Project\aspnet.microsevices\Services\Basket\Basket.Api\obj\Debug\net8.0\Basket.Api.genruntimeconfig.cache
 E:\courses\Asp .Net\.Net Microservice\Project\aspnet.microsevices\Services\Basket\Basket.Api\obj\Debug\net8.0\ref\Basket.Api.dll
 E:\courses\Asp .Net\.Net Microservice\Project\aspnet.microsevices\Services\Basket\Basket.Api\obj\Debug\net8.0\Basket.Api.sourcelink.json
+E:\courses\Asp .Net\.Net Microservice\Project\aspnet.microsevices\Services\Basket\Basket.Api\bin\Debug\net8.0\Google.Protobuf.dll
+E:\courses\Asp .Net\.Net Microservice\Project\aspnet.microsevices\Services\Basket\Basket.Api\bin\Debug\net8.0\Grpc.AspNetCore.Server.dll
+E:\courses\Asp .Net\.Net Microservice\Project\aspnet.microsevices\Services\Basket\Basket.Api\bin\Debug\net8.0\Grpc.AspNetCore.Server.ClientFactory.dll
+E:\courses\Asp .Net\.Net Microservice\Project\aspnet.microsevices\Services\Basket\Basket.Api\bin\Debug\net8.0\Grpc.Core.Api.dll
+E:\courses\Asp .Net\.Net Microservice\Project\aspnet.microsevices\Services\Basket\Basket.Api\bin\Debug\net8.0\Grpc.Net.Client.dll
+E:\courses\Asp .Net\.Net Microservice\Project\aspnet.microsevices\Services\Basket\Basket.Api\bin\Debug\net8.0\Grpc.Net.ClientFactory.dll
+E:\courses\Asp .Net\.Net Microservice\Project\aspnet.microsevices\Services\Basket\Basket.Api\bin\Debug\net8.0\Grpc.Net.Common.dll

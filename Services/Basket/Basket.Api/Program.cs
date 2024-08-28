@@ -1,5 +1,7 @@
 
+using Basket.Api.GrpcServices;
 using Basket.Api.Repositories;
+using Discount.Grpc.Protos;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -11,6 +13,7 @@ using Microsoft.OpenApi.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Threading.Tasks;
 namespace Basket.Api
 {
@@ -19,7 +22,7 @@ namespace Basket.Api
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
-
+            //public IConfiguration Configuration{ get;}
             // Add services to the container.
             //public IConfiguration Configuration { get; }
 
@@ -29,7 +32,14 @@ namespace Basket.Api
                 });
 
                 builder.Services.AddScoped<IBasketRepository, BasketRepository>();
-                builder.Services.AddControllers();
+                builder.Services.AddGrpcClient<DiscountProtoService.DiscountProtoServiceClient>
+            (options =>
+            {
+                options.Address = new Uri(builder.Configuration["GrpcSettings:DiscountUrl"]);
+            });
+
+            builder.Services.AddScoped<DiscountGrpcService>();
+            builder.Services.AddControllers();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
